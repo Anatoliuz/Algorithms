@@ -18,7 +18,9 @@ void BubbleSort(int* arr, int size)
             }
         }
     }
+    cout << "BubbleSort: ";
     for (int index = 0; index < size; ++index  ) {
             cout<<arr[index] << ",";
         }
+    cout << endl;
 }
