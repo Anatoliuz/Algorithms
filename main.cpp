@@ -7,9 +7,7 @@
 //
 //
 #include <iostream>
-#include "bubbleSort.h"
-#include "InsertionSort.h"
-#include "Binom.h"
+
 #define MAX 6
 #define INF 100000000
 
@@ -52,7 +50,9 @@
 //    }
 //}
 
-class Tree{
+
+
+    class Tree{
 private:
     int data;
     Tree* left;
@@ -70,21 +70,28 @@ public:
         if (tree == nullptr) {
             return NewTree(data);
         }
-        if (data < tree->data   ) {
+        else {
+            if (data < tree->data   ) {
             tree -> left = Insert(tree->left, data);
         }
+            else if (data >= tree-> data){
+                tree -> right = Insert(tree->right, data);
+            }
         return tree;
     }
-    void Find(int data){}
-    void Remove(int data){}
+    }
     void Print(Tree* tree){
         while (tree != 0) {
             std::cout << tree -> data;
             tree = tree->left;
         }
-       // return tree->left;
+        // return tree->left;
     }
-    };
+    //  void Find(int data){}
+    // void Remove(int data){}
+};
+
+
 int main(int argc, const char * argv[])
 {
     Tree* tree;
@@ -92,7 +99,7 @@ int main(int argc, const char * argv[])
     for(auto n: { 9, 8 , 7}){
       tree->Insert(tree, n);
     }
-    tree -> Print(tree);
+    
+   // tree -> Print(tree);
     return 0;
 }
-
